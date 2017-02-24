@@ -13,6 +13,8 @@ import time
 
 #Initialize a face cascade using the frontal face haar cascade provided with
 #the OpenCV library
+#Make sure that you copy this file from the opencv project to the root of this
+#project folder
 faceCascade = cv2.CascadeClassifier('../haarcascade_frontalface_default.xml')
 
 #The deisred output width and height
