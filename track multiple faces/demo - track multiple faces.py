@@ -151,7 +151,8 @@ def detectAndTrackMultipleFaces():
 
 
 
-
+                    #Variable holding information which faceid we 
+                    #matched with
                     matchedFid = None
 
                     #Now loop over all the trackers and check if the 
