@@ -84,7 +84,7 @@ def detectAndTrackMultipleFaces():
             #STEPS:
             # * Update all trackers and remove the ones that are not 
             #   relevant anymore
-            # * if framecounter >= 5:
+            # * Every 10 frames:
             #       + Use face detection on the current frame and look
             #         for faces. 
             #       + For each found face, check if centerpoint is within
