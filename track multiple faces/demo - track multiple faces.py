@@ -45,11 +45,6 @@ def detectAndTrackMultipleFaces():
     #Start the window thread for the two windows we are using
     cv2.startWindowThread()
 
-
-    #The variable we use to keep track of the fact whether we are
-    #currently using the dlib tracker
-    trackingFace = 0
-
     #The color of the rectangle we draw around the face
     rectangleColor = (0,165,255)
 
