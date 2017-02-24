@@ -221,11 +221,15 @@ def detectAndTrackMultipleFaces():
 
 
                 if fid in faceNames.keys():
-                    cv2.putText(resultImage, faceNames[fid] , (int(t_x + t_w/2), int(t_y)), cv2.FONT_HERSHEY_SIMPLEX,
-                            0.5, (255, 255, 255), 2)
+                    cv2.putText(resultImage, faceNames[fid] , 
+                                (int(t_x + t_w/2), int(t_y)), 
+                                cv2.FONT_HERSHEY_SIMPLEX,
+                                0.5, (255, 255, 255), 2)
                 else:
-                    cv2.putText(resultImage, "Detecting..." , (int(t_x + t_w/2), int(t_y)), cv2.FONT_HERSHEY_SIMPLEX,
-                            0.5, (255, 255, 255), 2)
+                    cv2.putText(resultImage, "Detecting..." , 
+                                (int(t_x + t_w/2), int(t_y)), 
+                                cv2.FONT_HERSHEY_SIMPLEX,
+                                0.5, (255, 255, 255), 2)
 
 
 
