@@ -189,13 +189,24 @@ def detectAndTrackMultipleFaces():
 
                         faceTrackers[ currentFaceID ] = tracker
 
-                        t = threading.Thread( target = doRecognizePerson , args=( faceNames, currentFaceID))
+                        #Start a new thread that is used to simulate 
+                        #face recognition. This is not yet implemented in this
+                        #version :)
+                        t = threading.Thread( target = doRecognizePerson ,
+                                               args=(faceNames, currentFaceID))
                         t.start()
 
+                        #Increase the currentFaceID counter
                         currentFaceID += 1
 
 
 
+
+            #Now loop over all the trackers we have and draw the rectangle
+            #around the detected faces. If we 'know' the name for this person
+            #(i.e. the recognition thread is finished), we print the name
+            #of the person, otherwise the message indicating we are detecting
+            #the name of the person
             for fid in faceTrackers.keys():
                 tracked_position =  faceTrackers[fid].get_position()
 
