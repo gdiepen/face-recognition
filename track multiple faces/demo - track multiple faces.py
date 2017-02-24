@@ -64,7 +64,6 @@ def detectAndTrackMultipleFaces():
             #Resize the image to 320x240
             baseImage = cv2.resize( fullSizeBaseImage, ( 320, 240))
 
-
             #Check if a key was pressed and if it was Q, then destroy all
             #opencv windows and exit the application
             pressedKey = cv2.waitKey(2)
