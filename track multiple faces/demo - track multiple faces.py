@@ -97,10 +97,10 @@ def detectAndTrackMultipleFaces():
             frameCounter += 1 
 
 
+
+            #Update all the trackers and remove the ones for which the update
+            #indicated the quality was not good enough
             fidsToDelete = []
-
-
-            #Update all the trackers
             for fid in faceTrackers.keys():
                 trackingQuality = faceTrackers[ fid ].update( baseImage )
 
