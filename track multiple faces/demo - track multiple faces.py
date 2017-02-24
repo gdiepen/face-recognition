@@ -22,7 +22,8 @@ OUTPUT_SIZE_WIDTH = 775
 OUTPUT_SIZE_HEIGHT = 600
 
 
-def detectPersonName(faceNames, fid):
+#We are not doing really face recognition
+def doRecognizePerson(faceNames, fid):
     time.sleep(2)
     faceNames[ fid ] = "Person " + str(fid)
 
@@ -191,7 +192,7 @@ def detectAndTrackMultipleFaces():
                         print("Creating new tracker " + str(currentFaceID))
                         faceTrackers[ currentFaceID ] = tracker
 
-                        t = threading.Thread( target = detectPersonName , args=( faceNames, currentFaceID))
+                        t = threading.Thread( target = doRecognizePerson , args=( faceNames, currentFaceID))
                         t.start()
 
                         currentFaceID += 1
