@@ -166,16 +166,20 @@ def detectAndTrackMultipleFaces():
                         t_w = int(tracked_position.width())
                         t_h = int(tracked_position.height())
 
-                        #check if the centerpoint of the face is within the rectangle
-                        #of a tracker region
-                        if ( t_x <= x_bar <= (t_x + t_w) ) and (  t_y <= y_bar <= (t_y + t_h)):
+                        #check if the centerpoint of the face is within the 
+                        #rectangleof a tracker region. If it is, we have 
+                        #a match
+                        if ( ( t_x <= x_bar <= (t_x + t_w) ) and 
+                             (  t_y <= y_bar <= (t_y + t_h))):
                             matchedFid = fid
 
 
-                    #If no matched fid, then add a new one
+                    #If no matched fid, then we have to create a new tracker
                     if matchedFid is None:
 
+                        print("Creating new tracker " + str(currentFaceID))
 
+                        #Create and store the tracker 
                         tracker = dlib.correlation_tracker()
                         tracker.start_track(baseImage,
                                             dlib.rectangle( x-10,
