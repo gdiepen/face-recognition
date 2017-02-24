@@ -122,7 +122,6 @@ def detectAndTrackMultipleFaces():
 
 
 
-                #print("********************************************************************************")
                 #For the face detection, we need to make use of a gray
                 #colored image so we will convert the baseImage to a
                 #gray-based image
