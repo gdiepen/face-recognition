@@ -187,7 +187,6 @@ def detectAndTrackMultipleFaces():
                                                             x+w+10,
                                                             y+h+20))
 
-                        print("Creating new tracker " + str(currentFaceID))
                         faceTrackers[ currentFaceID ] = tracker
 
                         t = threading.Thread( target = doRecognizePerson , args=( faceNames, currentFaceID))
