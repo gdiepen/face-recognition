@@ -48,12 +48,12 @@ def detectAndTrackMultipleFaces():
     #The color of the rectangle we draw around the face
     rectangleColor = (0,165,255)
 
+    #variables holding the current frame number and the current faceid
     frameCounter = 0
-
     currentFaceID = 0
 
+    #Variables holding the correlation trackers and the name per faceid
     faceTrackers = {}
-
     faceNames = {}
 
     try:
