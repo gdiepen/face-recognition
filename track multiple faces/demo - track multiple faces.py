@@ -165,11 +165,20 @@ def detectAndTrackMultipleFaces():
                         t_w = int(tracked_position.width())
                         t_h = int(tracked_position.height())
 
+
+                        #calculate the centerpoint
+                        t_x_bar = t_x + 0.5 * t_w
+                        t_y_bar = t_y + 0.5 * t_h
+
                         #check if the centerpoint of the face is within the 
-                        #rectangleof a tracker region. If it is, we have 
-                        #a match
-                        if ( ( t_x <= x_bar <= (t_x + t_w) ) and 
-                             (  t_y <= y_bar <= (t_y + t_h))):
+                        #rectangleof a tracker region. Also, the centerpoint
+                        #of the tracker region must be within the region 
+                        #detected as a face. If both of these conditions hold
+                        #we have a match
+                        if ( ( t_x <= x_bar   <= (t_x + t_w)) and 
+                             ( t_y <= y_bar   <= (t_y + t_h)) and 
+                             ( x   <= t_x_bar <= (x   + w  )) and 
+                             ( y   <= t_y_bar <= (y   + h  ))):
                             matchedFid = fid
 
 
