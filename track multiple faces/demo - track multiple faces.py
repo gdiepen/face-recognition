@@ -262,11 +262,14 @@ def detectAndTrackMultipleFaces():
 
 
     #To ensure we can also deal with the user pressing Ctrl-C in the console
-    #we have to check for the KeyboardInterrupt exception and destroy
-    #all opencv windows and exit the application
+    #we have to check for the KeyboardInterrupt exception and break out of
+    #the main loop
     except KeyboardInterrupt as e:
-        cv2.destroyAllWindows()
-        exit(0)
+        pass
+
+    #Destroy any OpenCV windows and exit the application
+    cv2.destroyAllWindows()
+    exit(0)
 
 
 if __name__ == '__main__':
